@@ -1,0 +1,14 @@
+{
+  "name": "seidorveritas-zsinb_exit_itaipu",
+  "version": "1.0.0",
+  "description": "seidorveritas-zsinb_exit_itaipu",
+  "repositoryLayout": {
+    "formatVersion": 5,
+    "format": "json",
+    "objectStorage": "plain",
+    "metaInformation": ".gctsmetadata/",
+    "tableContent": "true",
+    "readableSource": "false",
+    "keepClient": "false"
+  }
+}
