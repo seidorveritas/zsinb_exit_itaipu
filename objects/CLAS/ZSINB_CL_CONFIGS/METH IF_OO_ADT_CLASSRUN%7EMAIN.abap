@@ -1,5 +1,37 @@
   METHOD if_oo_adt_classrun~main.
     CALL METHOD insert_lista_cfg.
+
+
+       DATA: lt_tbl TYPE TABLE OF /sfci/t_cfg_glob.
+
+    lt_tbl = VALUE #(
+
+
+      (
+          mandt   =   ''
+          modulo = 'SFCI'
+          cons_data_fim = 'X'
+      )
+      ).
+
+
+    DELETE FROM /sfci/t_cfg_glob.
+
+
+    INSERT /sfci/t_cfg_glob FROM TABLE @lt_tbl.
+
+
+
+DATA: lt_tbl2 TYPE TABLE OF /sfci/t_cfg_tbl.
+
+    lt_tbl2 = VALUE #(
+        ( client = '' tabname =  '/SFCI/T_CFG_GLOB' descricao = 'Configurações gerais de produto' )
+    ).
+
+
+    MODIFY /sfci/t_cfg_tbl FROM TABLE @lt_tbl2.
+
+
       DATA(lo_scope_api) = cl_aps_bc_scope_change_api=>create_instance( ).
 
     lo_scope_api->scope(
